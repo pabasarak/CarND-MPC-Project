@@ -14,6 +14,7 @@ epsi[t+1] = psi[t] - psides[t] + v[t] * delta[t] / Lf * dt
 ```
 
 where,
+
 •	x: Coordinate on the x-axis
 
 •	y: Coordinate on the y-axis
@@ -27,6 +28,20 @@ where,
 •	epsi: Orientation Error.
 
 
+## State Vector
+
+The state vector is [x, y, psi, v, delta, a], where
+
+* x: car's x position
+*	y: car;s y position
+*	psi: car's heading angle
+*	v: car's velocity
+*	delta: steering angle of the car
+*	a: throttle on the car
+
+## Actuators
+* delta: steering angle
+*	a: throttle
 
 
 # CarND-Controls-MPC
