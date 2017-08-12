@@ -15,17 +15,12 @@ epsi[t+1] = psi[t] - psides[t] + v[t] * delta[t] / Lf * dt
 
 where,
 
-•	x: Coordinate on the x-axis
-
-•	y: Coordinate on the y-axis
-
-•	psi: Orientation
-
-•	v: Speed of the car
-
-•	cte: Cross Track Error
-
-•	epsi: Orientation Error.
+*	x: Coordinate on the x-axis
+*	y: Coordinate on the y-axis
+*	psi: Orientation
+*	v: Speed of the car
+*	cte: Cross Track Error
+*	epsi: Orientation Error.
 
 
 ## State Vector
@@ -42,6 +37,21 @@ The state vector is [x, y, psi, v, delta, a], where
 ## Actuators
 * delta: steering angle
 *	a: throttle
+
+## Hyper parameter tuning (N and dt)
+
+The N and dt were chosen manually by trial and error.
+The prediction horizon is N*dt.  Choosing a large N is suitable as the track is always changing. Smaller N will not give good results.
+
+Larger dt will also result with poor results and smaller dt requires high computational power.
+After several experiments N =10 and dt =0.1s gave good results and they were chosen as the MPC parameters.
+
+## Polynomial fitting and Preprocessing
+A third degree polynomial was used to fit waypoints. The waypoints preprocessed by converting them into local positions based on the car's location.
+
+## Latency
+The latency dt was set to 100ms and next predicted positions were used, than the current positions.
+
 
 
 # CarND-Controls-MPC
