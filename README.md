@@ -15,11 +15,17 @@ epsi[t+1] = psi[t] - psides[t] + v[t] * delta[t] / Lf * dt
 
 where,
 •	x: Coordinate on the x-axis
-•	y: Coordinate on the y-axis.
-•	psi: Orientation.
-•	v: Speed of the car.
-•	cte: Cross Track Error.
+
+•	y: Coordinate on the y-axis
+
+•	psi: Orientation
+
+•	v: Speed of the car
+
+•	cte: Cross Track Error
+
 •	epsi: Orientation Error.
+
 
 
 
