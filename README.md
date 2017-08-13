@@ -50,7 +50,15 @@ After several experiments N =10 and dt =0.1s gave good results and they were cho
 A third degree polynomial was used to fit waypoints. The waypoints preprocessed by converting them into local positions based on the car's location.
 
 ## Latency
-The latency dt was set to 100ms and next predicted positions were used, than the current positions.
+The dt  chosen  is 100ms and the latency is also 100ms. 
+
+### To solve the latency problem, followings were done,
+
+* The next state prediction positions used for solving the equations.
+* Minimized the cross track, heading, and velocity errors.
+* Minimized the use of actuators, and achieve smooth corners
+* Minimized the value gap between sequential actuations
+
 
 
 ## Results
